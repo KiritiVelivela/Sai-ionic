@@ -1,0 +1,234 @@
+page-home {
+
+.profilebutton {
+position: absolute;
+left: 30%;
+top: 65%;
+margin: auto;
+}
+
+.profiletext {
+position: absolute;
+left: 10%;
+top: 50%;
+margin: auto;
+background: #b2afaf;
+}
+
+  .inner {
+    width: 3000px;
+    //height: 10%;
+    ion-card {
+      display: table-cell;
+      border: solid 1px #ccc;
+      text-align: center;
+      position: relative;
+      height: 3cm;
+      width: 200px;
+    }
+  }
+
+  .portimage {
+    align-content: center;
+    //width: 100%;
+    height: 100%;
+    padding-top: 0%;
+    margin-top: 0%;
+  }
+
+
+  .card-title-port {
+    position: absolute;
+    top: 60%;
+    font-size: 1.0em;
+    width: 100%;
+    font-weight: bold;
+    color: #000000;
+    text-shadow: 4px 4px 8px #000000;
+
+  }
+
+  .card-background-page {
+    ion-card {
+      position: relative;
+      text-align: center;
+    }
+
+    .card-title {
+      position: absolute;
+      top: 60%;
+      font-size: 1.0em;
+      width: 100%;
+      font-weight: bold;
+      color: #fff;
+      text-shadow: 4px 4px 8px #000000;
+
+    }
+
+    .card-subtitle {
+      font-size: 1.0em;
+      position: absolute;
+      top: 52%;
+      width: 100%;
+      color: #fff;
+      text-shadow: 4px 4px 8px #000000;
+    }
+  }
+
+
+//  MEDIA SLIDESHOW ////////////////////////////////////////
+
+  /* Included color classes..
+	.red
+	.blue
+	.yellow
+	.green
+	.navy
+*/
+
+  @import url(https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css);
+  @import url(https://fonts.googleapis.com/css?family=Raleway:400,500,800);
+  figure.snip1126 {
+    font-family: 'Raleway', Arial, sans-serif;
+    position: relative;
+    float: left;
+    overflow: hidden;
+    margin: 10px 1%;
+    min-width: 220px;
+    max-width: 310px;
+    max-height: 220px;
+    width: 100%;
+    background: #000000;
+    text-align: left;
+    text-align: center;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
+  }
+
+  figure.snip1126 * {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-transition: all 0.35s ease-in-out;
+    transition: all 0.35s ease-in-out;
+  }
+
+  figure.snip1126 img {
+    max-width: 100%;
+    position: relative;
+  }
+
+  figure.snip1126 figcaption {
+    position: absolute;
+    top: 12%;
+    bottom: 12%;
+    right: 25px;
+    left: 40%;
+    padding: 10px 20px;
+    background-color: #ffffff;
+    box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.4);
+    z-index: 1;
+    -webkit-transform: translateY(-20px);
+    transform: translateY(-20px);
+    opacity: 0;
+  }
+
+  figure.snip1126 h3 {
+    color: #000000;
+    margin: 0;
+    text-transform: uppercase;
+    font-weight: 400;
+    border-bottom: 1px solid #ddd;
+    padding: 7px;
+  }
+
+  figure.snip1126 h3 span {
+    font-weight: 800;
+  }
+
+  figure.snip1126 p {
+    font-size: 0.8em;
+    font-weight: 500;
+  }
+
+  figure.snip1126:after {
+    background: #000000;
+    height: 50px;
+    width: 100%;
+    position: absolute;
+    bottom: -30px;
+    left: 0;
+    content: '';
+    background-image: -webkit-linear-gradient(top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.15) 100%);
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.15) 100%);
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+  }
+
+  figure.snip1126 a {
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    position: absolute;
+    z-index: 1;
+  }
+
+  figure.snip1126.blue h3 {
+    color: #1b557a;
+  }
+
+  figure.snip1126.blue:after {
+    background-color: #20638f;
+  }
+
+  figure.snip1126.red h3 {
+    color: #81261d;
+  }
+
+  figure.snip1126.red:after {
+    background-color: #962d22;
+  }
+
+  figure.snip1126.yellow h3 {
+    color: #b06f09;
+  }
+
+  figure.snip1126.yellow:after {
+    background-color: #c87f0a;
+  }
+
+  figure.snip1126.green h3 {
+    color: #19703e;
+  }
+
+  figure.snip1126.green:after {
+    background-color: #1e8449;
+  }
+
+  figure.snip1126.navy h3 {
+    color: #19232d;
+  }
+
+  figure.snip1126.navy:after {
+    background-color: #222f3d;
+  }
+
+  figure.snip1126:hover img,
+  figure.snip1126.hover img {
+    -webkit-transform: translateY(-20px);
+    transform: translateY(-20px);
+  }
+
+  figure.snip1126:hover:after,
+  figure.snip1126.hover:after {
+    bottom: 0;
+  }
+
+  figure.snip1126:hover figcaption,
+  figure.snip1126.hover figcaption {
+    -webkit-transform: translateY(0px);
+    transform: translateY(0px);
+    opacity: 1;
+  }
+
+
+}

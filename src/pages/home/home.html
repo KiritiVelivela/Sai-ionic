@@ -1,0 +1,151 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>
+      <img src="assets/Images/Sai@1.png" style="height: 1.4cm;width: 2cm;margin-top: 0.3cm" >
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<!------------------------------------------HOME PAGE------------------------------------->
+
+<ion-content>
+<!--------------- HOME SLIDESHOW ------------------->
+  <ion-slides autoplay="5000" loop="true" speed="3000" style="height:250px;width: 100%" >
+    <ion-slide>
+        <button ion-button small color="#ee5f5f" round class="button profilebutton" (click)="goToMentor()">APPLY FOR MENTOR </button>
+        <p class="profiletext"> A MENTOR THAT MAKES IDEAS WORK </p>
+      <img src="assets/Slideshow/pic1.png" style="height: 200px;width: 100%">
+    </ion-slide>
+    <ion-slide>
+        <button ion-button small color="danger" round class="button profilebutton" (click)="goToApply()">APPLY FOR STARTUP </button>
+        <p class="profiletext"> ADDING VALUE TO NEW VENTURES </p>
+<img src="assets/Slideshow/pic2.png" style="height: 200px;width: 100%">
+    </ion-slide>
+    <ion-slide >
+      <img src="assets/Slideshow/pic3.png" style="height: 200px;width: 100%">
+    <p class="profiletext"> ACCELERATING STARTUPS WISELY </p>
+    </ion-slide>
+    <ion-slide >
+      <img src="assets/Slideshow/pic4.png" style="height: 200px;width: 100%">
+          <p class="profiletext"> GIVING STARTUPS GUIDANCE TO SOAR </p>
+    </ion-slide>
+  </ion-slides>
+  <hr style="margin-top: 0px;height: 3px;border: 0;box-shadow: 0 10px 10px -10px #8c8b8b inset;">
+
+  <!------------------- END OF HOME SLIDESHOW ---------------------------------------->
+
+
+  <!------------------------ ABOUT ------------------------------------------------------------------>
+
+  <h4 padding-left="0.5cm" style="text-shadow: 2px 2px 4px #8c8b8b">ABOUT</h4>
+
+      <h5 style="color: #488aff; padding-left: 0.4cm;">VISION</h5>
+      <p style=" padding-left: 0.4cm;"> To be a leading venture accelerator that adds value to innovative startups </p>
+
+  <h5 style="color: #488aff; padding-left: 0.4cm;">MISSION</h5>
+  <p style=" padding-left: 0.4cm;"> We help accelerate startups from ideation to growth <br>via novel mentorship model that creates new market opportunities and mitigate startup funding risk</p>
+  <!-- <img src="../../assets/Images/mapview.png" style="padding-left: 0.4cm;padding-right: 0.4cm"> -->
+
+  <p style="padding-left: 0.4cm;margin-right: 0.5cm"><b>"If you’re offered a seat on a rocket ship, don’t ask what seat! Just get on." - Sheryl Sandberg </b> <br>
+</p>
+    <!-- If you are an individual interested in joining one of our small group programs, you can apply to SAI now and you might just have the opportunity to rocket your business to success!
+    Fill out our form with your pitch deck and a general description of your business idea and your team. Are you a solo entrepreneur willing to discover if your idea has potential? Apply as well! We will be in touch shortly to discuss more details with you.<br><br>
+
+    SAI is a global innovation network that accelerates early stage start-ups into great businesses</p>
+
+<ion-row class="card-background-page">
+  <ion-card ion-col col-6>
+    <img src="assets/Images/about1.jpg"/>
+    <div class="card-title">Early-stage <br>Startups</div>
+  </ion-card>
+
+  <ion-card ion-col col-6>
+    <img src="assets/Images/about2.jpg"/>
+    <div class="card-title">Scalable business <br>models</div>
+  </ion-card>
+</ion-row>
+
+  <ion-row class="card-background-page">
+  <ion-card ion-col col-6>
+    <img src="assets/Images/about3.jpg"/>
+    <div class="card-title">Technological <br>leadership</div>
+  </ion-card>
+
+  <ion-card ion-col col-6>
+    <img src="assets/Images/about4.jpg"/>
+    <div class="card-title">Open to all <br>industries</div>
+  </ion-card>
+  </ion-row> -->
+
+  <button ion-col col-12 ion-button color="secondary" (click)="goToAbout()">Read More</button>
+
+
+  <!--<hr style="margin-top: 0px;height: 3px;border: 0;box-shadow: 0 10px 10px -10px #8c8b8b inset;">-->
+
+  <!------------------------END OF ABOUT -------------------------------------------------------------------------->
+
+
+  <!------------------------ PORTFOLIO ------------------------------------------------------------------>
+
+  <!-- <ion-card>
+
+  <ion-card-header padding-left="0.5cm" style="text-shadow: 2px 2px 4px #8c8b8b;font-size: x-large;">PORTFOLIO</ion-card-header>
+
+
+<ion-scroll scrollX="true" style="width: 100%;height: 130px">
+  <div class="inner">
+  <ion-card *ngFor="let data of datas" >
+    <img class="portimage" src="{{data.image }}"/> -->
+    <!--<div class="card-title-port">{{ data.name }}</div>-->
+    <!--<div class="card-subtitle">{{ data.id }}</div>-->
+  <!-- </ion-card>
+  </div>
+</ion-scroll> -->
+
+    <!-- <ion-card-content>
+      These are the enterprises that we helped startup with a rich amount of enthusiasm and fund sourcing.
+      These are businesses we have invested our expertise and intellect in to realize promising ventures.
+
+      <button ion-button icon-left clear style="padding-left: 75%; padding-bottom: 0%;" (click)="goToPortfolio()">
+        <ion-icon name="arrow-dropright"></ion-icon>
+        View All
+      </button>
+
+
+    </ion-card-content>
+
+
+  </ion-card>
+
+
+  <hr style="margin-top: 0px;height: 3px;border: 0;box-shadow: 0 10px 10px -10px #8c8b8b inset;">
+ -->
+
+  <!------------------------END OF PORTFOLIO------------------------------------------------------------------------>
+
+  <!--------------------MEDIA & EVENTS--------------------------------------->
+
+  <!-- <ion-row>
+  <h4 ion-col col-8 padding-left="0.5cm" style="text-shadow: 2px 2px 4px #8c8b8b">MEDIA & EVENTS </h4>
+  <button ion-col col-4 ion-button clear (click)="goToMedia()">
+    <ion-icon name="arrow-dropright"></ion-icon>
+    View All
+  </button>
+  </ion-row>
+  <ion-slides autoplay="500" loop="true" speed="3000" style="max-height:200px;width: 100%">
+
+    <ion-slide *ngFor="let eve of med">
+
+      <figure class="snip1126"><img src="{{ eve.image }}" style="height: 200px" />
+        <figcaption>
+          <p> {{ eve.title }} </p>
+        </figcaption><a href="#"></a>
+      </figure>
+
+      </ion-slide>
+  </ion-slides> -->
+
+</ion-content>

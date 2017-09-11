@@ -1,0 +1,119 @@
+
+<ion-header>
+
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>About</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+
+  <!--------SLIDESHOW-------------------------->
+
+  <ion-slides autoplay="5000" loop="true" speed="3000" style="max-height:200px;width: 100%;" >
+    <ion-slide *ngFor="let dat of abouts">
+      <img src="{{ dat.image }}" style="height: 200px;width: 100%">
+    </ion-slide>
+  </ion-slides>
+<hr>
+  <!------END OF SLIDESHOW----------------------------------------------------->
+
+  <!--------APPLY BUTTONS------------------------------------>
+<ion-row>
+  <button ion-col ion-button color="secondary" col-6 (click)="goToApply()">Apply For Startup</button>
+  <button ion-col ion-button color="secondary" col-6 (click)="goToMentor()">Apply For Mentor</button>
+</ion-row>
+<hr>
+
+  <!-----END OF BUTTONS----------------------------------------------------------->
+
+  <!-------CONTENT---------------------------------->
+<ion-card>
+  <h2 padding style="color: #488aff;">Startup Accelerator India</h2>
+  <blockquote> <p>If you’re offered a seat on a rocket ship, don’t ask what seat! Just get on. <br><p text-end>- Sheryl Sandberg</p></p> </blockquote>
+
+  <p padding>If you are an individual interested in joining one of our small group programs,
+    you can apply to SAI now and you might just have the opportunity to rocket your business to success!<br><br>
+
+    Fill out our form with your pitch deck and a general description of your business idea and your team.
+    Are you a solo entrepreneur willing to discover if your idea has potential? Apply as well!
+    We will be in touch shortly to discuss more details with you.<br><br>
+
+    SAI is a global innovation network that accelerates early stage start-ups into great businesses<br><br>
+
+    SAI has been transforming great ideas into high potential businesses in its Singapore and Vishakapatnam, Chennai and Vishakapatnam offices.
+    Last year 150 start-ups applied to our 6-month acceleration program. We invested valuable resources and financial support in the best~10 to help them in their "race to milestones.
+  </p>
+</ion-card>
+
+  <ion-card>
+  <h2 text-center padding>You'll have a place to work.</h2>
+  <p text-center padding>We believe startups learn more when they work side by side. Many founders say that working with peers is the best part of SAI.</p>
+  <br>
+  </ion-card>
+
+  <ion-card>
+  <h2 text-center padding>Is this program for you? </h2>
+  <p text-center padding>"We are looking for talented founders with an ambitious vision and the genuine desire to build a robust global business. More specifically we’re looking for:”</p>
+  <br>
+
+  <ion-row class="card-background-page">
+    <ion-card ion-col col-6>
+      <img src="../../assets/Images/about1.jpg"/>
+      <div class="card-title">Early-stage <br>Startups</div>
+    </ion-card>
+
+    <ion-card ion-col col-6>
+      <img src="../../assets/Images/about2.jpg"/>
+      <div class="card-title">Scalable business <br>models</div>
+    </ion-card>
+  </ion-row>
+
+  <ion-row class="card-background-page">
+    <ion-card ion-col col-6>
+      <img src="../../assets/Images/about3.jpg"/>
+      <div class="card-title">Technological <br>leadership</div>
+    </ion-card>
+
+    <ion-card ion-col col-6>
+      <img src="../../assets/Images/about4.jpg"/>
+      <div class="card-title">Open to all <br>industries</div>
+    </ion-card>
+  </ion-row>
+
+  </ion-card>
+
+  <ion-card>
+  <h2 text-center padding>They could be your mentors</h2>
+  <p text-center padding>More than 150 mentors are ready to help you. EdTech, MedTech, FoodTech, IoT, eCommerce, virtual reality, Thin SaaS, FashionTech, Tourism...
+    We will find the best advisors for you, to foster your growth during your time and after. They got your back.</p>
+  <br>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-header style="color: #488aff;">
+      Visakhapatnam
+    </ion-card-header>
+
+    <ion-item>
+      <ion-icon name="locate" item-left large ></ion-icon>
+      <h2>     Level 1, Sunrise Incubation Towers <br>
+        IT Layout Madhurawada, Hill Number 3,<br>
+        Visakhapatnam - 530048<br>
+        Andhra Pradesh, India  <br></h2>
+    </ion-item>
+
+    <ion-item>
+      <ion-icon name="mail" item-left large ></ion-icon>
+      <h2>anand@startupacceleratorindia.in</h2>
+    </ion-item>
+  </ion-card>
+
+  <!---------END OF CONTENT------------------------------------------------------------------------------->
+
+</ion-content>

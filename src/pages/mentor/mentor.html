@@ -1,0 +1,82 @@
+
+<ion-header>
+
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Apply for Mentor</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+  <img src="../../assets/apply/startup.png">
+
+
+  <div padding style="text-align: center">
+    <h3 style="color: deepskyblue"> Mentors Form</h3>
+
+  </div>
+
+
+  <div>
+
+    <!-----------------------APPLY FOR MENTOR FORM---------------------------------------------------------->
+
+<form #f="ngForm">
+    <ion-list>
+
+      <ion-item>
+        <ion-label stacked text-wrap>Name</ion-label>
+        <ion-input type="text" required name="mentorname" [(ngModel)]="data.mentorname"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label stacked text-wrap>Organization & Designation</ion-label>
+        <ion-input type="text" required name="organddesignation" [(ngModel)]="data.organddesignation"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label stacked text-wrap>Email Address </ion-label>
+        <ion-input type="text" required name="emailid" [(ngModel)]="data.emailid"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label stacked text-wrap>Mobile Number</ion-label>
+        <ion-input type="text" required name="mobile" [(ngModel)]="data.mobile"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label stacked text-wrap>Skype ID</ion-label>
+        <ion-input type="text" [ngModelOptions]="{standalone: true}" [(ngModel)]="data.skype"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label stacked text-wrap>LinkedIn ID</ion-label>
+        <ion-input type="text" required name="linkedin" [(ngModel)]="data.linkedin"></ion-input>
+      </ion-item>
+
+      <button ion-button color="secondary" outline style="align-content: center" (click)="submit()" [disabled]="!f.valid">Submit</button>
+
+    </ion-list>
+
+</form>
+
+    <ion-card>
+      <ion-card-header>
+        Response
+      </ion-card-header>
+
+      <ion-card-content>
+        <b>{{data.response}}</b>
+      </ion-card-content>
+    </ion-card>
+
+
+  </div>
+
+
+</ion-content>
+

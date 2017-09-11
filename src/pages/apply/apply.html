@@ -1,0 +1,187 @@
+
+<ion-header>
+
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Apply for Startup</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+  <img src="../../assets/apply/startup.png">
+
+
+<div padding style="text-align: center">
+  <h3 style="color: deepskyblue"> Startup Acceleration Request Form</h3>
+
+  <p> This form helps SAI to screen startups for the accelerator . All the fields are required. </p>
+
+  <p> Startup Accelerator India's location : Sunrise Startups Incubation Tower , First Floor , IT SEZ , <br/> Hill No 3 , Madhurawada , Visakhapatnam </p>
+
+</div>
+
+
+  <div>
+<!-----------------------------------FORM-------------------------------------------------------------------------------------->
+<form #f="ngForm">
+    <ion-list>
+
+      <ion-item>
+        <ion-label stacked text-wrap>Startup Name</ion-label>
+        <ion-input type="text" name="startupname" required [(ngModel)]="data.startupname"></ion-input>
+      </ion-item>
+
+      <ion-list radio-group name="studentstartup" [(ngModel)]="data.studentstartup">
+        <ion-list-header>
+          Is this a Student Startup?
+        </ion-list-header>
+        <ion-item>
+          <ion-label>Yes</ion-label>
+          <ion-radio value="1" checked></ion-radio>
+        </ion-item>
+        <ion-item>
+          <ion-label>No</ion-label>
+          <ion-radio value="0"></ion-radio>
+        </ion-item>
+      </ion-list>
+
+      <ion-item>
+        <ion-label stacked text-wrap>If Student Startup, which college do you belong to?</ion-label>
+        <ion-input type="text" [ngModelOptions]="{standalone: true}" [(ngModel)]="data.collegename" ></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label stacked text-wrap>Name of the founder </ion-label>
+        <ion-input type="text" required name="foundername" [(ngModel)]="data.foundername"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label stacked text-wrap>Primary Email</ion-label>
+        <ion-input type="text" required  name="primaryemail" [(ngModel)]="data.primaryemail"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label stacked text-wrap>Primary Contact details</ion-label>
+        <ion-input type="text" required name="contact" [(ngModel)]="data.contact"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label stacked text-wrap>What is your Team Size? </ion-label>
+        <ion-input type="text" required name="teamsize" [(ngModel)]="data.teamsize"></ion-input>
+      </ion-item>
+
+
+      <ion-item>
+        <ion-label stacked text-wrap>Number of Founders</ion-label>
+        <ion-input type="text" required name="founders" [(ngModel)]="data.founders"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label stacked text-wrap>Number of Women Co-founders</ion-label>
+        <ion-input type="text" required name="womenfounders" [(ngModel)]="data.womenfounders"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label stacked text-wrap>If Registered in India , enter state and district.
+        </ion-label>
+        <ion-input type="text" required name="registered"  [(ngModel)]="data.registered"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label stacked text-wrap>Angellist profile of the company</ion-label>
+        <ion-input type="text" required name="angellist" [(ngModel)]="data.angellist"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label stacked text-wrap>Url of the website/demo etc?</ion-label>
+        <ion-input type="text" required name="websiteurl" [(ngModel)]="data.websiteurl"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label stacked text-wrap>Please provide the founders role,backgrounds,linkedin profile(if available)</ion-label>
+        <ion-input type="text" required name="founderbackgrounds" [(ngModel)]="data.founderbackgrounds"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label stacked text-wrap>How many full time people on team(no interns,including founder)</ion-label>
+        <ion-input type="text" required name="fulltime" [(ngModel)]="data.fulltime"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label stacked text-wrap>Please describe your business in 140 words.</ion-label>
+        <ion-input type="text" required name="describebusiness" [(ngModel)]="data.describebusiness"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label stacked text-wrap>Who are your potential targeted customers and size of the market ?</ion-label>
+        <ion-input type="text" required name="targetcustomers" [(ngModel)]="data.targetcustomers"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label stacked text-wrap>Do you have plan to raise money in future?</ion-label>
+        <ion-input type="text" required name="raisemoney" [(ngModel)]="data.raisemoney"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label stacked text-wrap>Please describe your business model ?How will the company make money? </ion-label>
+        <ion-input type="text" required name="businessmodel" [(ngModel)]="data.businessmodel"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label stacked text-wrap>Is your company already incorporated?please provide the date,place and type(LLP/Pvt.Ltd)</ion-label>
+        <ion-input type="text" required name="llppvt" [(ngModel)]="data.llppvt"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label stacked text-wrap>What problem are you solving and for whom?Define customer segment and customer pain point that your product solves and premise to solve?</ion-label>
+        <ion-input type="text" required name="problemsolving" [(ngModel)]="data.problemsolving"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label stacked text-wrap>Who are your closest competitor ? How are you different from them?</ion-label>
+        <ion-input type="text" required name="competitor" [(ngModel)]="data.competitor"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label stacked text-wrap>
+          What transaction have you achieved to the date?</ion-label>
+        <ion-input type="text" required name="transactionacheived" [(ngModel)]="data.transactionacheived"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label stacked text-wrap>What do you feel your team's biggest weakness is ?</ion-label>
+        <ion-input type="text" required name="weakness" [(ngModel)]="data.teamweakness"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label stacked text-wrap>Any questions for us ?</ion-label>
+        <ion-input type="text" [ngModelOptions]="{standalone: true}" [(ngModel)]="data.Anyquestions"></ion-input>
+      </ion-item>
+
+    <button ion-button color="secondary" outline style="align-content: center" (click)="submit()" [disabled]="!f.valid">Submit</button>
+
+    </ion-list>
+
+</form>
+
+    <!------------------------------------------------END OF FORM---------------------------------------------------------------------------------------------------------->
+
+    <ion-card>
+      <ion-card-header>
+        Response
+      </ion-card-header>
+
+      <ion-card-content>
+        <b>{{data.response}}</b>
+      </ion-card-content>
+    </ion-card>
+
+
+  </div>
+
+
+</ion-content>

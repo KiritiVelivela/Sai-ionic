@@ -1,0 +1,46 @@
+
+<ion-header>
+
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Team Members</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<!---------------------TEAM MEMBERS PAGE---------------------------------->
+
+<ion-content padding>
+
+  <ion-list>
+    <p style="color: deepskyblue" >Team Members</p>
+    <ion-item *ngFor="let te of tea">
+      <ion-thumbnail item-start>
+        <img src="{{ te.pic }}">
+      </ion-thumbnail>
+      <h2>{{ te.name }}</h2>
+      <p>{{ te.position }}</p>
+      <button ion-button clear item-end [navPush]="teamddetailsPage" [navParams]="te" >View</button>
+    </ion-item>
+
+  </ion-list>
+
+
+  <ion-list>
+    <p style="color: deepskyblue" >Mentor-In-Residence</p>
+    <ion-item *ngFor="let m of men">
+      <ion-thumbnail item-start>
+        <img src="{{ m.pic }}">
+      </ion-thumbnail>
+      <h2>{{ m.name }}</h2>
+      <p>{{ m.position }}</p>
+      <button ion-button clear item-end [navPush]="teamddetailsPage" [navParams]="m">View</button>
+    </ion-item>
+
+  </ion-list>
+
+
+
+</ion-content>

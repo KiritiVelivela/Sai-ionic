@@ -1,0 +1,108 @@
+
+<ion-header>
+
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Contact</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+<h2 style="color: deepskyblue">Get In Touch</h2>
+  <hr style="margin-top: 0px;height: 3px;border: 0;box-shadow: 0 10px 10px -10px white inset;">
+  <h4 style="color: gray">Startup Accelerator India Pvt Ltd </h4>
+
+  <ion-card text-wrap>
+    <ion-card-header style="color: #488aff; font-size: larger">
+      Visakhapatnam(HQ)
+    </ion-card-header>
+
+    <ion-item>
+      <ion-icon name="locate" item-left large ></ion-icon>
+      <h3>     Level 1, Sunrise Incubation Towers <br>
+        IT Layout Madhurawada, Hill Number 3,<br>
+        Visakhapatnam - 530048<br>
+        Andhra Pradesh, India  <br></h3>
+    </ion-item>
+
+    <ion-item>
+      <ion-icon name="mail" item-left large ></ion-icon>
+      <h3>anand@startupacceleratorindia.in</h3>
+    </ion-item>
+  </ion-card>
+
+  <ion-card text-wrap>
+    <ion-card-header style="color: #488aff; font-size: larger">
+      Lucknow
+    </ion-card-header>
+
+    <ion-item>
+      <ion-icon name="locate" item-left large ></ion-icon>
+      <h3>     Dr A.P.J.Abdul Kalam Technical University <br>
+        Sec-11, Jankipuram, <br>
+        Vistar Yojna <br>
+        Lucknow Uttar Pradesh <br>
+        India 226031  <br></h3>
+    </ion-item>
+
+  </ion-card>
+
+  <ion-card text-wrap>
+    <ion-card-header style="color: #488aff; font-size: larger">
+      Pune
+    </ion-card-header>
+
+    <ion-item>
+      <ion-icon name="locate" item-left large ></ion-icon>
+      <h3> Swajay <br>
+        10 Sagar Soceity, <br>
+        Lane 4, Bavdhan <br>
+        Pune Maharashtra <br>
+        India 411021  <br></h3>
+    </ion-item>
+
+  </ion-card>
+
+  <!-------------------------------CONTACT FORM------------------------------------------------------------------->
+  <form #f="ngForm">
+  <ion-list>
+
+    <ion-item>
+      <ion-label stacked text-wrap>Name</ion-label>
+      <ion-input type="text" required name="conname" [(ngModel)]="data.conname"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label stacked text-wrap>Email</ion-label>
+      <ion-input type="text" required name="emailid" [(ngModel)]="data.emailid"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label stacked text-wrap>Mobile No </ion-label>
+      <ion-input type="text" required name="mobile" minlength="10" maxlength="10" [(ngModel)]="data.mobile"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label stacked text-wrap>Subject</ion-label>
+      <ion-input type="text" [ngModelOptions]="{standalone: true}" [(ngModel)]="data.subject"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label stacked text-wrap>Write Your Message Here </ion-label>
+      <ion-input type="text" [ngModelOptions]="{standalone: true}" [(ngModel)]="data.yourmessage"></ion-input>
+    </ion-item>
+
+
+    <button ion-button color="secondary" outline style="align-content: center" (click)="submit()" [disabled]="!f.valid">Send</button>
+
+  </ion-list>
+
+  </form>
+
+  <!--------------------------------------------END------------------------------------------------------------------>
+
+</ion-content>

@@ -1,0 +1,26 @@
+
+<ion-header>
+
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Media & Events</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<!--------------------MEDIA PAGE---------------------------------------->
+<ion-content>
+
+  <ion-card *ngFor="let ev of med" (click)="Open(ev.link)">
+    <img src="{{ ev.image }}" />
+    <ion-card-content>
+      <ion-card-title>
+        {{ ev.title }}
+      </ion-card-title>
+
+    </ion-card-content>
+  </ion-card>
+
+</ion-content>

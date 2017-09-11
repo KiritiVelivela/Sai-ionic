@@ -1,0 +1,34 @@
+
+<ion-header>
+
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>{{ te.name }}</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<!---------THIS COMES WHEN WE PRESS ON A STARTUP FOUNDER IN STARTUPFOUNDERS PAGE------------->
+
+<ion-content padding>
+
+  <ion-card>
+    <ion-card-header>
+      <img src="{{ te.image }}"><br>
+
+      <ion-card-title style="color: deepskyblue">{{ te.name }}</ion-card-title>
+      {{ te.position }}
+    </ion-card-header>
+
+    <ion-card-content>
+      <p *ngFor="let t of te.about">
+        <br/>
+        {{ t.him }}
+      </p>
+    </ion-card-content>
+
+  </ion-card>
+
+</ion-content>

@@ -1,0 +1,31 @@
+
+<ion-header>
+
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Portfolio</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<!----------------THE PORTFOLIO PAGE--------------------->
+
+<ion-content padding>
+
+  <ion-card *ngFor="let det of dat"
+            [navPush]="detailsPage"
+            [navParams]="det">
+    <img src="{{ det.image }}"/>
+    <ion-card-content>
+      <ion-card-title>
+        {{  det.name }}
+      </ion-card-title>
+      <p>
+       {{ det.vision }}
+      </p>
+    </ion-card-content>
+  </ion-card>
+
+</ion-content>

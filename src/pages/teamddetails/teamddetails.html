@@ -1,0 +1,33 @@
+
+<ion-header>
+
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title> {{ te.name }} </ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<!------------------WHEN CLICKED ON A TEAM MEMBER WE COME TO THIS PAGE--------------------------------->
+<ion-content padding>
+
+  <ion-card>
+    <ion-card-header>
+      <img src="{{ te.pic }}"><br>
+
+      <ion-card-title style="color: deepskyblue">{{ te.name }}</ion-card-title>
+      {{ te.position }}
+    </ion-card-header>
+
+    <ion-card-content>
+      <p *ngFor="let t of te.details">
+        <br/>
+        {{ t.describe }}
+      </p>
+    </ion-card-content>
+
+  </ion-card>
+
+</ion-content>

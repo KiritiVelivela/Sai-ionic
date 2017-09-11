@@ -1,0 +1,9 @@
+{
+  "name": "sai",
+  "app_id": "",
+  "type": "ionic-angular",
+  "integrations": {
+    "cordova": {}
+  },
+  "backend": "pro"
+}

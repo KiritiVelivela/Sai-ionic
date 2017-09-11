@@ -1,0 +1,159 @@
+
+<ion-header>
+
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>{{ det.name}}</ion-title>
+
+  </ion-navbar>
+
+</ion-header>
+
+<!-----------------------THIS COME WHEN WE PRESS ON AN ITEM IN PORTFOLIO PAGE------------------------------------>
+<ion-content padding>
+
+  <ion-card>
+    <img src="{{ det.poster }}"/>
+    <ion-card-content>
+      <ion-card-title>
+        {{ det.name }}
+      </ion-card-title>
+
+      <a href="{{det.website}}"> {{ det.website }} </a>
+      <img src="{{ det.team }}">
+      <hr>
+      <h2 padding-bottom>Vision</h2>
+      <p>
+        {{ det.vision }}
+      </p> <br> <hr>
+
+      <div *ngIf="det.id == '3' || det.id == '4' || det.id == '6' || det.id == '7' || det.id == '8' || det.id == '11' || det.id == '12' || det.id == '13' || det.id == '15' || det.id == '16'">
+      <h2 padding-bottom>Mission</h2>
+      <p>
+        {{ det.mission }}
+      </p> <br> <hr>
+      </div>
+
+      <h2 padding-bottom >Problem</h2>
+      <p>
+        {{ det.problem }}
+      </p>
+      <img src="{{ det.problemimage }}">
+      <br> <hr>
+
+      <div *ngIf="det.id == '7'">
+        <h2 padding-bottom > Values</h2>
+        <p>
+          {{ det.values }}
+        </p>
+        <br> <hr>
+      </div>
+
+
+      <div *ngIf="det.id == '5'">
+      <h2 padding-bottom > There are various reasons for this.</h2>
+      <p *ngFor="let reas of det.reasons" padding-bottom>
+        {{ reas.rea }}
+      </p>
+      <br> <hr>
+      </div>
+
+      <div *ngIf="det.id == '1' || det.id == '3' || det.id == '4' || det.id == '5' || det.id == '6' || det.id == '7' || det.id == '9' || det.id == '11' || det.id == '13' || det.id == '14' || det.id == '15' || det.id == '16' " >
+      <h2 padding-bottom >Solution</h2>
+
+        <p text-wrap *ngFor="let solu of det.solution" padding-bottom >
+          {{ solu.sol }}
+        </p>
+       <br> <hr>
+      </div>
+
+      <div *ngIf="det.id == '7'" >
+        <h2 padding-bottom >Why</h2>
+
+        <p text-wrap *ngFor="let wh of det.why" padding-bottom >
+          {{ wh.w }}
+        </p>
+        <br> <hr>
+      </div>
+
+      <div *ngIf="det.id == '7' || det.id == '8'">
+        <h2 padding-bottom > Values</h2>
+        <p>
+          {{ det.values }}
+        </p>
+        <br> <hr>
+      </div>
+
+      <div *ngIf="det.id == '7'" >
+        <h2 padding-bottom >Benefits</h2>
+
+        <p text-wrap *ngFor="let be of det.benefits" padding-bottom >
+          {{ be.ben }}
+        </p>
+        <br> <hr>
+      </div>
+
+      <div *ngIf="det.id == '1' || det.id == '2' || det.id == '4' || det.id == '5'">
+      <h2 padding-bottom>Articles</h2>
+      <ion-list>
+        <a text-wrap ion-item *ngFor="let art of det.articles" href="{{ art.link }}" >
+          {{ art.title }}
+        </a>
+      </ion-list> <br>
+      </div>
+
+      <div *ngIf="det.id == '8' || det.id == '12'" >
+        <h2 padding-bottom >Products</h2>
+
+        <p text-wrap *ngFor="let pro of det.products" padding-bottom >
+          {{ pro.prod }}
+        </p>
+        <br> <hr>
+      </div>
+
+      <div *ngIf="det.id == '8' || det.id == '12' ">
+      <h2 padding-bottom >Services</h2>
+
+        <p text-wrap>
+          {{ det.services }}
+        </p>
+        <div *ngIf="det.id == '8'">
+        <img src="../../assets/portfolioContent/service1.jpg">
+        <img src="../../assets/portfolioContent/service2.jpg">
+        <img src="../../assets/portfolioContent/service3.jpg">
+        <img src="../../assets/portfolioContent/service4.jpg">
+        <img src="../../assets/portfolioContent/service5.jpg">
+        </div>
+      <br> <hr>
+      </div>
+
+
+      <div *ngIf="det.id == '12'">
+
+        <h2 padding-bottom>Management Team </h2>
+        <p>{{ det.managementteam }}</p>
+        <br> <hr>
+
+        <h2 padding-bottom>Technology</h2>
+        <p>{{ det.technology }}</p>
+        <br> <hr>
+
+        <h2 padding-bottom>Conclusion </h2>
+        <p>{{ det.conclusion }}</p>
+        <br> <hr>
+
+      </div>
+
+      <div *ngIf="det.id == '13' || det.id == '15' || det.id == '16'">
+        <h2 padding-bottom>Description</h2>
+        <p> {{ det.description }} </p>
+        <br> <hr>
+      </div>
+
+
+    </ion-card-content>
+  </ion-card>
+<!-------------------------------------END-------------------------------------------------->
+</ion-content>
