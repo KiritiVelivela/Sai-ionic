@@ -8,6 +8,7 @@ import {PortfolioPage} from "../pages/portfolio/portfolio";
 import {MediaPage} from "../pages/media/media";
 import {ContactPage} from "../pages/contact/contact";
 import {TabsPage} from "../pages/tabs/tabs";
+import {FirstPage} from "../pages/first/first";
 
 @Component({
   templateUrl: 'app.html'
@@ -15,7 +16,7 @@ import {TabsPage} from "../pages/tabs/tabs";
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
-  rootPage: any = BeginPage;
+  rootPage: any = FirstPage;
 
   pages: Array<{title: string, component: any}>;
 

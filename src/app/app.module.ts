@@ -24,6 +24,7 @@ import {StartupfoundersPage} from "../pages/startupfounders/startupfounders";
 import {TeamddetailsPage} from "../pages/teamddetails/teamddetails";
 import {StartupfdetailsPage} from "../pages/startupfdetails/startupfdetails";
 import {BeginPage} from "../pages/begin/begin";
+import {FirstPage} from "../pages/first/first";
 
 @NgModule({
   declarations: [
@@ -43,7 +44,8 @@ import {BeginPage} from "../pages/begin/begin";
     StartupfoundersPage,
     TeamddetailsPage,
     StartupfdetailsPage,
-    BeginPage
+    BeginPage,
+    FirstPage
   ],
   imports: [
     BrowserModule,
@@ -68,7 +70,8 @@ import {BeginPage} from "../pages/begin/begin";
     StartupfoundersPage,
     TeamddetailsPage,
     StartupfdetailsPage,
-    BeginPage
+    BeginPage,
+    FirstPage
   ],
   providers: [
     StatusBar,
