@@ -22,13 +22,14 @@ export class ContactPage {
   submit() {
     var link = 'http://localhost/connectionSQL/contact.php';
     var yourData = JSON.stringify({
-      conname: this.data.conname,
-      emailid: this.data.emailid,
+      name: this.data.conname,
+      email: this.data.emailid,
       mobile: this.data.mobile,
       subject: this.data.subject,
-      yourmessage: this.data.yourmessage });
+      message: this.data.yourmessage });
     console.log(this.data.conname);
     console.log(this.data.emailid);
+    console.log(yourData);
     this.http.post(link, yourData)
       .subscribe(data => {
         this.data.response = data["_body"];

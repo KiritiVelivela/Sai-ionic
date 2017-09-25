@@ -14,28 +14,20 @@ export class ApplyPage {
 
   constructor(public navCtrl: NavController, public http: Http) {
     this.data.startupname = '';
-    this.data.studentstartup = '';
-    this.data.collegename = '';
-    this.data.foundername = '';
+    this.data.founders = '';
+    this.data.teamsize = '';
+    this.data.industry = '';
+    this.data.vision = '';
+    this.data.mission = '';
+    this.data.problemstatement = '';
+    this.data.solution = '';
+    this.data.businessmodel = '';
+    this.data.keymilestones = '';
+    this.data.place = '';
+    this.data.websiteurl = '';
     this.data.primaryemail = '';
     this.data.contact = '';
-    this.data.teamsize = '';
-    this.data.founders = '';
-    this.data.womenfounders = '';
-    this.data.registered = '';
-    this.data.angellist = '';
-    this.data.websiteurl = '';
-    this.data.founderbackgrounds = '';
-    this.data.fulltime = '';
-    this.data.describebusiness = '';
-    this.data.targetcustomers = '';
-    this.data.raisemoney = '';
-    this.data.businessmodel = '';
-    this.data.llppvt = '';
-    this.data.problemsolving = '';
-    this.data.competitor = '';
-    this.data.transactionacheived = '';
-    this.data.teamweakness = '';
+    this.data.foundersprofiles = '';
     this.data.Anyquestions = '';
 
     this.data.response = '';
@@ -47,28 +39,20 @@ export class ApplyPage {
     var link = 'http://localhost/connectionSQL/api.php';
     var myData = JSON.stringify({
       startupname: this.data.startupname,
-      studentstartup: this.data.studentstartup,
-      collegename: this.data.collegename,
-      foundername: this.data.foundername,
+      founders: this.data.founders,
+      teamsize: this.data.teamsize,
+      industry: this.data.industry,
+      vision: this.data.vision,
+      mission: this.data.mission,
+      problemstatement: this.data.problemstatement,
+      solution: this.data.solution,
+      businessmodel: this.data.businessmodel,
+      keymilestones: this.data.keymilestones,
+      place: this.data.place,
+      websiteurl: this.data.websiteurl,
       primaryemail: this.data.primaryemail,
       contact: this.data.contact,
-      teamsize: this.data.teamsize,
-      founders: this.data.founders,
-      womenfounders: this.data.womenfounders,
-      registered: this.data.registered,
-      angellist: this.data.angellist,
-      websiteurl: this.data.websiteurl,
-      founderbackgrounds: this.data.founderbackgrounds,
-      fulltime: this.data.fulltime,
-      describebusiness: this.data.describebusiness,
-      targetcustomers: this.data.targetcustomers,
-      raisemoney: this.data.raisemoney,
-      businessmodel: this.data.businessmodel,
-      llppvt: this.data.llppvt,
-      problemsolving: this.data.problemsolving,
-      competitor: this.data.competitor,
-      transactionacheived: this.data.transactionacheived,
-      teamweakness: this.data.teamweakness,
+      foundersprofiles: this.data.foundersprofiles,
       Anyquestions: this.data.Anyquestions  });
     console.log(this.data.startupname);
     console.log(this.data.studentstartup);

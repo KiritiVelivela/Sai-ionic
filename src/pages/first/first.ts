@@ -1,14 +1,7 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { NavController, NavParams } from 'ionic-angular';
+import {SignupPage} from '../signup/signup'
 
-/**
- * Generated class for the FirstPage page.
- *
- * See http://ionicframework.com/docs/components/#navigation for more info
- * on Ionic pages and navigation.
- */
-
-@IonicPage()
 @Component({
   selector: 'page-first',
   templateUrl: 'first.html',
@@ -18,8 +11,8 @@ export class FirstPage {
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad FirstPage');
-  }
+gotoSignup() {
+  this.navCtrl.push(SignupPage);
+}
 
 }

@@ -24,13 +24,14 @@ export class MentorPage {
     var link = 'http://localhost/connectionSQL/mentor.php';
     var yourData = JSON.stringify({
       mentorname: this.data.mentorname,
-      organddesignation: this.data.organddesignation,
-      emailid: this.data.emailid,
+      organddes: this.data.organddesignation,
+      email: this.data.emailid,
       mobile: this.data.mobile,
       skype: this.data.skype,
       linkedin: this.data.linkedin });
     console.log(this.data.name);
     console.log(this.data.organddesignation);
+    console.log(yourData);
     this.http.post(link, yourData)
       .subscribe(data => {
         this.data.response = data["_body"];

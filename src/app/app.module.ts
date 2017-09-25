@@ -25,6 +25,10 @@ import {TeamddetailsPage} from "../pages/teamddetails/teamddetails";
 import {StartupfdetailsPage} from "../pages/startupfdetails/startupfdetails";
 import {BeginPage} from "../pages/begin/begin";
 import {FirstPage} from "../pages/first/first";
+import {LandingPage} from "../pages/landing/landing";
+import {SignupPage} from "../pages/signup/signup";
+
+
 
 @NgModule({
   declarations: [
@@ -45,7 +49,9 @@ import {FirstPage} from "../pages/first/first";
     TeamddetailsPage,
     StartupfdetailsPage,
     BeginPage,
-    FirstPage
+    FirstPage,
+    LandingPage,
+    SignupPage
   ],
   imports: [
     BrowserModule,
@@ -71,7 +77,9 @@ import {FirstPage} from "../pages/first/first";
     TeamddetailsPage,
     StartupfdetailsPage,
     BeginPage,
-    FirstPage
+    FirstPage,
+    LandingPage,
+    SignupPage
   ],
   providers: [
     StatusBar,
