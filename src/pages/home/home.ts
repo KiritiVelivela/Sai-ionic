@@ -8,6 +8,7 @@ import {MediaPage} from "../media/media";
 import {TabsPage} from "../tabs/tabs";
 import {ApplyPage} from "../apply/apply";
 import {MentorPage} from "../mentor/mentor";
+import {AuthProvider} from "../../providers/auth/auth";
 
 @Component({
   selector: 'page-home',
@@ -20,7 +21,7 @@ export class HomePage implements OnInit{
 
   med: {id: string, image: string, link: string, title: string}[];
 
-  constructor(public navCtrl: NavController) {}
+  constructor(public navCtrl: NavController, public authservice: AuthProvider) {}
 
   ngOnInit(){
     this.datas = ports;
@@ -45,6 +46,14 @@ export class HomePage implements OnInit{
 
   goToApply() {
     this.navCtrl.push(ApplyPage);
+  }
+
+  logout() {
+    this.authservice.logout();
+  }
+
+  gotoChat(){
+    this.navCtrl.push;
   }
 
 }

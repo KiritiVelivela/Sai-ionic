@@ -9,30 +9,49 @@ import {MediaPage} from "../pages/media/media";
 import {ContactPage} from "../pages/contact/contact";
 import {TabsPage} from "../pages/tabs/tabs";
 import {LandingPage} from "../pages/landing/landing";
+import {AuthProvider} from "../../src/providers/auth/auth";
 
 @Component({
   templateUrl: 'app.html'
 })
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
-
+public edited = true;
   rootPage: any = LandingPage;
 
-  pages: Array<{title: string, component: any}>;
+  pages: Array<{title: string, component: any, name: any}>;
 
-  constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen) {
+  constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen, public authserv: AuthProvider) {
     this.initializeApp();
+    this.saveTodos();
 
     // used for an example of ngFor and navigation
     this.pages = [
-      { title: 'Home', component: BeginPage },
-      { title: 'About', component: TabsPage },
-      { title: 'Portfolio', component: PortfolioPage },
-      { title: 'Media & Events', component: MediaPage },
-      { title: 'Contact', component: ContactPage }
+      { title: 'Home', component: BeginPage, name: 'home' },
+      { title: 'About', component: TabsPage, name: 'information-circle' },
+      { title: 'Portfolio', component: PortfolioPage, name: 'briefcase' },
+      { title: 'Media & Events', component: MediaPage, name: 'md-calendar' },
+      { title: 'Contact', component: ContactPage, name: 'call' }
     ];
 
   }
+
+
+saveTodos(): void {
+  this.authserv.loadUserCredentials();
+  if (this.authserv.AuthToken == null) {
+    this.edited = false;
+    console.log(this.edited);
+  } else {
+    this.edited = true;
+    console.log(this.edited);
+  }
+  //show box msg
+}
+
+gotoDestroy() {
+  this.authserv.destroyUserCredentials();
+}
 
   initializeApp() {
     this.platform.ready().then(() => {

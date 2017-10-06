@@ -27,6 +27,7 @@ import {BeginPage} from "../pages/begin/begin";
 import {FirstPage} from "../pages/first/first";
 import {LandingPage} from "../pages/landing/landing";
 import {SignupPage} from "../pages/signup/signup";
+import { AuthProvider } from '../providers/auth/auth';
 
 
 
@@ -85,7 +86,9 @@ import {SignupPage} from "../pages/signup/signup";
     StatusBar,
     SplashScreen,
     InAppBrowser,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    AuthProvider
   ]
 })
-export class AppModule {}
+export class AppModule {
+}
