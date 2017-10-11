@@ -3,7 +3,7 @@
 
       <img *ngIf="edited" src="../../assets/mentor/baskargaru.jpg" style="border-radius: 50%;width: 20vh; height: 20vh;margin: auto;display: block;">
       <p *ngIf="edited" text-center style="color: white;font-weight: bold;margin-bottom: 0px;">Welcome</p>
-      <p *ngIf="edited" text-center style="color: white;font-weight: bold;margin-top: 0px;">Bhaskar</p>
+      <p *ngIf="edited" text-center style="color: white;font-weight: bold;margin-top: 0px;">{{ mail }}</p>
   </ion-header>
   <ion-content class="gradient">
     <ion-list no-lines style="margin-top: 40px;">
@@ -15,7 +15,7 @@
   </ion-content>
 
 <ion-footer>
-  <button ion-button full bottom (click)="gotoDestroy()"> Log Out <ion-icon name="md-log-out" item-right padding></ion-icon></button>
+  <button *ngIf="edited" ion-button full bottom (click)="gotoDestroy()"> Log Out <ion-icon name="md-log-out" item-right padding></ion-icon></button>
 </ion-footer>
 
 </ion-menu>

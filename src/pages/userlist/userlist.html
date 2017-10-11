@@ -1,0 +1,25 @@
+
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Chat List</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+  <ion-list>
+
+    <ion-item *ngFor="let lis of lists" [navPush]="chatpage"
+              [navParams]="lis" >
+      <ion-avatar item-left>
+        <img src="./assets/about/about1.png">
+      </ion-avatar>
+      <h2>{{ lis.email }}</h2>
+      <p>{{ lis.verified }}</p>
+    </ion-item>
+  </ion-list>
+
+</ion-content>

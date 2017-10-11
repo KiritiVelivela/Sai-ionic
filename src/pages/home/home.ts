@@ -9,6 +9,7 @@ import {TabsPage} from "../tabs/tabs";
 import {ApplyPage} from "../apply/apply";
 import {MentorPage} from "../mentor/mentor";
 import {AuthProvider} from "../../providers/auth/auth";
+import {UserlistPage} from "../userlist/userlist";
 
 @Component({
   selector: 'page-home',
@@ -53,7 +54,7 @@ export class HomePage implements OnInit{
   }
 
   gotoChat(){
-    this.navCtrl.push;
+    this.navCtrl.push(UserlistPage);
   }
 
 }

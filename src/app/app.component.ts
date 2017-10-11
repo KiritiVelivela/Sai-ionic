@@ -17,6 +17,7 @@ import {AuthProvider} from "../../src/providers/auth/auth";
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
 public edited = true;
+public mail;
   rootPage: any = LandingPage;
 
   pages: Array<{title: string, component: any, name: any}>;
@@ -44,6 +45,8 @@ saveTodos(): void {
     console.log(this.edited);
   } else {
     this.edited = true;
+    this.mail = window.localStorage.getItem('email');
+    console.log(this.mail);
     console.log(this.edited);
   }
   //show box msg

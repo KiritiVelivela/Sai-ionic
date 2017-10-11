@@ -15,9 +15,10 @@ export class AuthProvider {
   }
 
 
-    storeUserCredentials(token) {
-      window.localStorage.setItem('sai', token);
-      this.useCredentials(token);
+    storeUserCredentials(response) {
+      window.localStorage.setItem('sai', response.token);
+      window.localStorage.setItem('email', response.email);
+      this.useCredentials(response);
 
     }
 
@@ -35,6 +36,7 @@ export class AuthProvider {
       this.isLoggedin = false;
       this.AuthToken = null;
       window.localStorage.clear();
+      console.log(this.AuthToken);
     }
 
     authenticate(user) {
@@ -45,8 +47,8 @@ export class AuthProvider {
       return new Promise(resolve => {
         this.http.post('http://localhost:3333/authenticate', creds, {headers: headers}).subscribe(data => {
           if(data.json().success){
-            this.storeUserCredentials(data.json().token);
-            console.log(data.json().token);
+            this.storeUserCredentials(data.json());
+            console.log(data.json().email);
             resolve(data);
           }
           else
@@ -88,6 +90,10 @@ export class AuthProvider {
     logout() {
       this.destroyUserCredentials();
       console.log(this.AuthToken);
+    }
+
+    getusers() {
+      return  this.http.get('http://localhost:3333/getu').map(res => res.json());
     }
 
 

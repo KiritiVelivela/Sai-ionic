@@ -28,7 +28,10 @@ import {FirstPage} from "../pages/first/first";
 import {LandingPage} from "../pages/landing/landing";
 import {SignupPage} from "../pages/signup/signup";
 import { AuthProvider } from '../providers/auth/auth';
-
+import {UserlistPage} from "../pages/userlist/userlist";
+import {ChatPage} from "../pages/chat/chat";
+import { ConversationProvider } from '../providers/conversation/conversation';
+import {RelativeTime} from "../pipes/relative-time";
 
 
 @NgModule({
@@ -52,7 +55,10 @@ import { AuthProvider } from '../providers/auth/auth';
     BeginPage,
     FirstPage,
     LandingPage,
-    SignupPage
+    SignupPage,
+    UserlistPage,
+    ChatPage,
+    RelativeTime
   ],
   imports: [
     BrowserModule,
@@ -80,14 +86,17 @@ import { AuthProvider } from '../providers/auth/auth';
     BeginPage,
     FirstPage,
     LandingPage,
-    SignupPage
+    SignupPage,
+    UserlistPage,
+    ChatPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
     InAppBrowser,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    AuthProvider
+    AuthProvider,
+    ConversationProvider
   ]
 })
 export class AppModule {
