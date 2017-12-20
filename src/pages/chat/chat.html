@@ -1,7 +1,7 @@
 <ion-header>
 
     <ion-navbar>
-        <ion-title>{{toUser.name}}</ion-title>
+        <ion-title>{{toUser.id}}</ion-title>
     </ion-navbar>
 
 </ion-header>
@@ -9,55 +9,31 @@
 <ion-content>
 
     <div class="message-wrap">
-        <div *ngFor="let ms of this.retrieved" class="message"
+        <div *ngFor="let ms of msgs" class="message"
         [ngClass]="ms.fromemail == this.message.from ? 'left' : (ms.toemail === this.message.to ? 'right' : 'right') ">
             <img class="user-img" [src]=" " alt="no" src="">
             <div class="msg-detail">
                 <div class="msg-info">
                     <p>
-                        {{ms.fromemail}}&nbsp;&nbsp;&nbsp;{{ms.time | relativeTime}}</p>
+                        {{ms.fromemail}}&nbsp;&nbsp;&nbsp;{{ ms.time | relativeTime }}</p>
                 </div>
                 <div class="msg-content">
                     <span class="triangle"></span>
-                    <p class="line-breaker ">{{ms.message}}</p>
+                    <p class="line-breaker ">{{ ms.message || ms.text }}</p>
                 </div>
             </div>
         </div>
 
     </div>
 
-    <!-- <div class="message-wrap">
-
-        <div
-             class="message right">
-            <img class="user-img" [src]=" " alt="no" src="">
-            <div class="msg-detail">
-                <div class="msg-info">
-                    <p>
-                        relativeTime</p>
-                </div>
-                <div class="msg-content">
-                    <span class="triangle"></span>
-                    <p class="line-breaker ">hey</p>
-                </div>
-            </div>
-        </div>
-
-    </div> -->
-
 </ion-content>
 
-<ion-footer no-border [style.height]="showEmojiPicker ? '255px' : '55px'">
+<ion-footer no-border>
     <ion-grid class="input-wrap">
         <ion-row>
-            <ion-col col-2>
-                <button ion-button clear icon-only item-right (click)="switchEmojiPicker()">
-                    <ion-icon name="md-happy"></ion-icon>
-                </button>
-            </ion-col>
             <ion-col col-8>
                 <ion-textarea #chat_input
-                              placeholder="Text Input"
+                              placeholder="Message"
                               [(ngModel)]="message.content">
                 </ion-textarea>
             </ion-col>

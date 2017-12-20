@@ -32,7 +32,8 @@ import {UserlistPage} from "../pages/userlist/userlist";
 import {ChatPage} from "../pages/chat/chat";
 import { ConversationProvider } from '../providers/conversation/conversation';
 import {RelativeTime} from "../pipes/relative-time";
-
+import { SocketIoModule, SocketIoConfig } from 'ng-socket-io';
+const config: SocketIoConfig = { url: 'http://localhost:3333', options: {} };
 
 @NgModule({
   declarations: [
@@ -63,7 +64,8 @@ import {RelativeTime} from "../pipes/relative-time";
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
-    HttpModule
+    HttpModule,
+    SocketIoModule.forRoot(config)
   ],
   bootstrap: [IonicApp],
   entryComponents: [

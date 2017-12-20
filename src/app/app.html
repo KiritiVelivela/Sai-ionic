@@ -1,13 +1,13 @@
 <ion-menu [content]="content">
-  <ion-header class="gradient" style="margin-top: 30px;">
-
-      <img *ngIf="edited" src="../../assets/mentor/baskargaru.jpg" style="border-radius: 50%;width: 20vh; height: 20vh;margin: auto;display: block;">
-      <p *ngIf="edited" text-center style="color: white;font-weight: bold;margin-bottom: 0px;">Welcome</p>
-      <p *ngIf="edited" text-center style="color: white;font-weight: bold;margin-top: 0px;">{{ mail }}</p>
+  <ion-header class="row gradient" style="margin-top: 40px;">
+      <img *ngIf="loggedIn" src="../../assets/Images/commonuser.png" style="border-radius: 50%;width: 15vh; height: 15vh;display: inline-block;margin-right: 5px;margin-left:5px;">
+    <div style="display: inline-block;vertical-align: center;color: white;">  <p *ngIf="loggedIn" text-center style="margin-bottom: 0px;margin-top: 20px;">Welcome</p>
+      <p *ngIf="loggedIn" text-center>{{ mail }}</p>
+    </div>
   </ion-header>
   <ion-content class="gradient">
-    <ion-list no-lines style="margin-top: 40px;">
-      <button detail-none menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)" class="gradient butt">
+    <ion-list no-lines style="margin-top: 80px;">
+      <button detail-none menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)" class="gradient butt butborder">
         {{p.title}}
         <ion-icon name='{{ p.name }}' item-left></ion-icon>
       </button>

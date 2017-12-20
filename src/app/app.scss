@@ -6,6 +6,12 @@
   background: linear-gradient(to left, #348f50, #56b4d3); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
+.butborder {
+ border-top: 1px solid #00b09b; /* fallback for old browsers */
+ border-top: 1px solid -webkit-linear-gradient(to bottom, #00b09b, #96c93d); /* Chrome 10-25, Safari 5.1-6 */
+ border-top: 1px solid linear-gradient(to bottom, #00b09b, #96c93d); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
 .butt {
   color: white;
   font-weight: bold;

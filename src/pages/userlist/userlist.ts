@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import {AuthProvider} from "../../providers/auth/auth";
 import {ChatPage} from "../chat/chat";
+import { Socket } from 'ng-socket-io';
+
 
 
 @Component({
@@ -11,10 +13,11 @@ import {ChatPage} from "../chat/chat";
 export class UserlistPage {
 lists: any = [];
 chatpage = ChatPage
-  constructor(public navCtrl: NavController, public authservice: AuthProvider) {
+  constructor(public navCtrl: NavController, public authservice: AuthProvider, private socket: Socket) {
   }
 
   ionViewDidLoad() {
+    this.socket.connect();
     console.log("Hey");
     this.authservice.getusers().subscribe(data => {
       if(data) {

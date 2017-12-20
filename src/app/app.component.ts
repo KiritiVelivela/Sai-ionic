@@ -1,5 +1,5 @@
 import { Component, ViewChild } from '@angular/core';
-import { Nav, Platform } from 'ionic-angular';
+import { Nav, Platform, MenuController, Events } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
@@ -19,12 +19,13 @@ export class MyApp {
 public edited = true;
 public mail;
   rootPage: any = LandingPage;
-
+  loggedIn = false;
   pages: Array<{title: string, component: any, name: any}>;
 
-  constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen, public authserv: AuthProvider) {
+  constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen, public authserv: AuthProvider, public menuCtrl: MenuController, private events: Events) {
     this.initializeApp();
     this.saveTodos();
+    this.listenToLoginEvents();
 
     // used for an example of ngFor and navigation
     this.pages = [
@@ -53,7 +54,9 @@ saveTodos(): void {
 }
 
 gotoDestroy() {
+  this.menuCtrl.close();
   this.authserv.destroyUserCredentials();
+  this.nav.setRoot(LandingPage);
 }
 
   initializeApp() {
@@ -62,6 +65,12 @@ gotoDestroy() {
       // Here you can do any higher level native things you might need.
       this.statusBar.styleDefault();
       this.splashScreen.hide();
+      if (this.edited==true) {
+        this.edited = true;
+        this.mail = window.localStorage.getItem('email');
+          this.nav.setRoot(BeginPage, this.mail);
+          this.loggedIn = true;
+      }
     });
   }
 
@@ -70,4 +79,15 @@ gotoDestroy() {
     // we wouldn't want the back button to show in this scenario
     this.nav.setRoot(page.component);
   }
+
+  listenToLoginEvents() {
+      this.events.subscribe('user:login', () => {
+        this.loggedIn = true;
+      });
+
+      this.events.subscribe('user:logout', () => {
+        this.loggedIn = false;
+      });
+    }
+
 }

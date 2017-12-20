@@ -16,13 +16,22 @@ import {UserlistPage} from "../userlist/userlist";
   templateUrl: 'home.html'
 })
 export class HomePage implements OnInit{
+  mail: string;
+  loggedin: any;
   datas:{id: string, image: string, name: string, vision: string, problem?: string, solution?: Solution[], mission?: string, values?: string,
     articles?: Article[], website: string, poster?: string, description?: string, reasons?: Reason[], why?: Why[], benefits?: Benefits[], products?: Products[],
     services?: string, managementteam?: string, technology?: string, conclusion?: string, team?: string, problemimage?: string}[];
 
   med: {id: string, image: string, link: string, title: string}[];
 
-  constructor(public navCtrl: NavController, public authservice: AuthProvider) {}
+  constructor(public navCtrl: NavController, public authservice: AuthProvider) {
+    this.mail = window.localStorage.getItem('email');
+    if (this.mail == null) {
+      this.loggedin = false;
+    } else{
+      this.loggedin = true;
+    }
+  }
 
   ngOnInit(){
     this.datas = ports;

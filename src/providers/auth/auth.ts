@@ -49,7 +49,7 @@ export class AuthProvider {
           if(data.json().success){
             this.storeUserCredentials(data.json());
             console.log(data.json().email);
-            resolve(data);
+            resolve(data.json().verified);
           }
           else
             resolve(false);

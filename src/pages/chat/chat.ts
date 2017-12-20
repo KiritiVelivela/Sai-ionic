@@ -1,14 +1,19 @@
-import { Component } from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular';
+import { Component, ViewChild } from '@angular/core';
+import { NavController, NavParams, Content } from 'ionic-angular';
 import {ConversationProvider} from "../../providers/conversation/conversation";
 import {RelativeTime} from "../../pipes/relative-time";
+import { Socket } from 'ng-socket-io';
+import { Observable } from 'rxjs/Observable';
+import * as moment from 'moment';
 
 @Component({
   selector: 'page-chat',
   templateUrl: 'chat.html',
 })
 export class ChatPage {
-retrieved: any;
+retrieved1: any;
+  @ViewChild(Content) content: Content;
+msgs = [];
 
   message = {
     content: '',
@@ -17,7 +22,16 @@ retrieved: any;
   }
 
 toUser: any;
-  constructor( public navCtrl: NavController, public navParams: NavParams, public messageService: ConversationProvider) {
+  constructor( public navCtrl: NavController, public navParams: NavParams, public messageService: ConversationProvider, private socket: Socket) {
+
+
+
+    this.getMessages().subscribe(message => {
+          console.log("get===" + message);
+          console.log( message);
+          this.msgs.push(message);
+          this.scrollToBottom();
+        });
 
     this.message.to = navParams.get('email');
     console.log(this.message.to);
@@ -31,8 +45,17 @@ toUser: any;
 
   }
 
+  ionViewWillLeave() {
+  this.socket.disconnect();
+}
+
+  ionViewWillEnter() {
+
+  }
+
   ionViewDidLoad() {
     this.getmsg();
+    this.scrollToBottom();
   }
 
   getmsg() {
@@ -43,22 +66,53 @@ toUser: any;
       console.log(dets);
       if(data) {
         console.log(data);
-        this.retrieved = data;
-        console.log("retrieved= " + this.retrieved);
+        console.log("retcheck= " + data);
+        this.retrieved1 = data;
+        console.log("r1=="+this.retrieved1.length);
+        for (let i = 0; i < this.retrieved1.length; i++) {
+            this.retrieved1[i];
+            console.log(this.retrieved1[i]);
+            this.msgs.push(this.retrieved1[i]);
+        }
       }
+      console.log(this.msgs);
     });
   }
+
+  getMessages() {
+  let observable = new Observable(observer => {
+    this.socket.on('message', (data) => {
+      console.log(data);
+      console.log("observe="+data.fromemail);
+      // var newms = {
+      //   message: data.text,
+      //   toemail: this.message.to,
+      //   fromemail: this.message.from,
+      //   time: data.created
+      // }
+      console.log("observe=="+data);
+      console.log(data);
+      observer.next(data);
+    });
+  })
+  return observable;
+}
 
   sendMsg(messages) {
     console.log("Hey Chatty");
     console.log(messages);
-    this.messageService.send(messages).then(data => {
-      console.log(messages);
-      if(data) {
-        console.log(this.message);
-        console.log(data);
-      }
-    });
+    this.socket.emit('add-message', messages );
+    messages.content = ' ';
+    this.scrollToBottom();
+
+  }
+
+  scrollToBottom() {
+      setTimeout(() => {
+          if (this.content.scrollToBottom) {
+              this.content.scrollToBottom();
+          }
+      }, 400)
   }
 
 }

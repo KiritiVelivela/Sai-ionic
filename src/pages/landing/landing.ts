@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular';
+import { NavController, NavParams, MenuController } from 'ionic-angular';
 import {FirstPage} from "../first/first";
 import {BeginPage} from "../begin/begin";
 
@@ -9,7 +9,8 @@ import {BeginPage} from "../begin/begin";
 })
 export class LandingPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public menuCtrl: MenuController) {
+    this.menuCtrl.swipeEnable(false);
   }
 
 gotoFirst() {
