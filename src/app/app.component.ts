@@ -10,6 +10,7 @@ import {ContactPage} from "../pages/contact/contact";
 import {TabsPage} from "../pages/tabs/tabs";
 import {LandingPage} from "../pages/landing/landing";
 import {AuthProvider} from "../../src/providers/auth/auth";
+import {AddPortfoilioPage} from "../pages/add-portfoilio/add-portfoilio";
 
 @Component({
   templateUrl: 'app.html'
@@ -33,7 +34,8 @@ public mail;
       { title: 'About', component: TabsPage, name: 'information-circle' },
       { title: 'Portfolio', component: PortfolioPage, name: 'briefcase' },
       { title: 'Media & Events', component: MediaPage, name: 'md-calendar' },
-      { title: 'Contact', component: ContactPage, name: 'call' }
+      { title: 'Contact', component: ContactPage, name: 'call' },
+      { title: 'Add Portfolio', component: AddPortfoilioPage, name: 'call' }
     ];
 
   }

@@ -1,0 +1,54 @@
+
+<ion-header>
+
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Add Portfolio</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <!-- <form> -->
+    <ion-item>
+      <ion-label floating>Startup Name </ion-label>
+      <ion-input [(ngModel)] = "startupcreds.startupname"  type="text"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label floating>Vision</ion-label>
+        <ion-input [(ngModel)] = "startupcreds.startupvision"  type="text"></ion-input>
+    </ion-item>
+
+    <ion-item >
+      <ion-label floating>Mission</ion-label>
+      <ion-input [(ngModel)] = "startupcreds.startupmission" type="text"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label floating>Problem</ion-label>
+        <ion-input [(ngModel)] = "startupcreds.startupproblem" type="text"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label floating>Solution</ion-label>
+        <ion-input [(ngModel)] = "startupcreds.startupsolution" type="text"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label floating>Description</ion-label>
+        <ion-input [(ngModel)] = "startupcreds.startupdescription" type="text"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label floating>Website Link</ion-label>
+        <ion-input [(ngModel)] = "startupcreds.startupurl" type="url"></ion-input>
+    </ion-item>
+
+
+    <button ion-button full color="primary" style="margin-top: 20px;" (click)="newStartup(startupcreds)">ADD</button>
+  <!-- </form> -->
+</ion-content>

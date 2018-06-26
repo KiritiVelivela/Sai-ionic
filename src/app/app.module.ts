@@ -30,9 +30,11 @@ import {SignupPage} from "../pages/signup/signup";
 import { AuthProvider } from '../providers/auth/auth';
 import {UserlistPage} from "../pages/userlist/userlist";
 import {ChatPage} from "../pages/chat/chat";
+import {AddPortfoilioPage} from "../pages/add-portfoilio/add-portfoilio";
 import { ConversationProvider } from '../providers/conversation/conversation';
 import {RelativeTime} from "../pipes/relative-time";
 import { SocketIoModule, SocketIoConfig } from 'ng-socket-io';
+import { AddStartupProvider } from '../providers/add-startup/add-startup';
 const config: SocketIoConfig = { url: 'http://localhost:3333', options: {} };
 
 @NgModule({
@@ -59,7 +61,8 @@ const config: SocketIoConfig = { url: 'http://localhost:3333', options: {} };
     SignupPage,
     UserlistPage,
     ChatPage,
-    RelativeTime
+    RelativeTime,
+    AddPortfoilioPage
   ],
   imports: [
     BrowserModule,
@@ -90,7 +93,8 @@ const config: SocketIoConfig = { url: 'http://localhost:3333', options: {} };
     LandingPage,
     SignupPage,
     UserlistPage,
-    ChatPage
+    ChatPage,
+    AddPortfoilioPage
   ],
   providers: [
     StatusBar,
@@ -98,7 +102,8 @@ const config: SocketIoConfig = { url: 'http://localhost:3333', options: {} };
     InAppBrowser,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     AuthProvider,
-    ConversationProvider
+    ConversationProvider,
+    AddStartupProvider
   ]
 })
 export class AppModule {
