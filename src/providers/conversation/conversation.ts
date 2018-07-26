@@ -18,7 +18,7 @@ export class ConversationProvider {
 send(messages) {
   console.log("Hey conversation provider");
   console.log(messages);
-return new Promise(resolve => {  this.http.post('localhost:3333/sendmessage', messages).subscribe(data => {
+return new Promise(resolve => {  this.http.post('http://192.168.6.210:3333/sendmessage', messages).subscribe(data => {
     if(data.json().success){
       console.log(data);
         resolve(data.json());
@@ -29,7 +29,7 @@ return new Promise(resolve => {  this.http.post('localhost:3333/sendmessage', me
 
 get(dets) {
   console.log("getting messages btw 2 users");
-  return new Promise(resolve => {  this.http.post('localhost:3333/getmsg', dets).subscribe(data => {
+  return new Promise(resolve => {  this.http.post('http://192.168.6.210:3333/getmsg', dets).subscribe(data => {
       if(data){
         console.log(data.json().history);
         resolve(data.json().history);

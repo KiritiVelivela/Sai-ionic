@@ -35,6 +35,10 @@ import { ConversationProvider } from '../providers/conversation/conversation';
 import {RelativeTime} from "../pipes/relative-time";
 import { SocketIoModule, SocketIoConfig } from 'ng-socket-io';
 import { AddStartupProvider } from '../providers/add-startup/add-startup';
+import { Camera } from '@ionic-native/camera';
+import { FileTransfer } from '@ionic-native/file-transfer';
+
+
 const config: SocketIoConfig = { url: 'http://localhost:3333', options: {} };
 
 @NgModule({
@@ -103,7 +107,9 @@ const config: SocketIoConfig = { url: 'http://localhost:3333', options: {} };
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     AuthProvider,
     ConversationProvider,
-    AddStartupProvider
+    AddStartupProvider,
+    Camera,
+    FileTransfer
   ]
 })
 export class AppModule {

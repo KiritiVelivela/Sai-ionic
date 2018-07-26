@@ -48,6 +48,16 @@
         <ion-input [(ngModel)] = "startupcreds.startupurl" type="url"></ion-input>
     </ion-item>
 
+    <!-- <ion-item>
+      <ion-input type="file" [(ngModel)] = "startupcreds.startupfiles" value="" (change)="fileChange($event)"></ion-input>
+        <img *ngIf="img1" [src]="img1"/>
+    </ion-item> -->
+
+    <ion-fab right bottom>
+      <button ion-fab type="file" value="" (click)="presentActionSheet()" (change)="fileChange($event)"><ion-icon name="camera"></ion-icon></button>
+      <img *ngIf="images" [src]="images"/>
+    </ion-fab>
+
 
     <button ion-button full color="primary" style="margin-top: 20px;" (click)="newStartup(startupcreds)">ADD</button>
   <!-- </form> -->
