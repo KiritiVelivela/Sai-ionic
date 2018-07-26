@@ -45,7 +45,7 @@ export class AuthProvider {
       headers.append('Content-Type', 'application/x-www-form-urlencoded');
 
       return new Promise(resolve => {
-        this.http.post('http://192.168.6.210:3333/authenticate', creds, {headers: headers}).subscribe(data => {
+        this.http.post('https://sai-vizag.herokuapp.com/authenticate', creds, {headers: headers}).subscribe(data => {
           if(data.json().success){
             this.storeUserCredentials(data.json());
             console.log(data.json().email);
@@ -62,7 +62,7 @@ export class AuthProvider {
       headers.append('Content-Type', 'application/x-www-form-urlencoded');
 
       return new Promise(resolve => {
-        this.http.post('http://192.168.6.210:3333/adduser', creds, {headers: headers}).subscribe(data => {
+        this.http.post('https://sai-vizag.herokuapp.com/adduser', creds, {headers: headers}).subscribe(data => {
           if(data.json().success){
             resolve(true);
           }
@@ -78,7 +78,7 @@ export class AuthProvider {
         this.loadUserCredentials();
         console.log(this.AuthToken);
         headers.append('Authorization', 'Bearer ' +this.AuthToken);
-        this.http.get('http://192.168.6.210:3333/getinfo', {headers: headers}).subscribe(data => {
+        this.http.get('https://sai-vizag.herokuapp.com/getinfo', {headers: headers}).subscribe(data => {
           if(data.json().success)
             resolve(data.json());
           else
@@ -93,7 +93,7 @@ export class AuthProvider {
     }
 
     getusers() {
-      return  this.http.get('http://192.168.6.210:3333/getu').map(res => res.json());
+      return  this.http.get('https://sai-vizag.herokuapp.com/getu').map(res => res.json());
     }
 
 

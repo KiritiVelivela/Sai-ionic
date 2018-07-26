@@ -24,7 +24,7 @@ export class AddStartupProvider {
     headers.append('Content-Type', 'application/x-www-form-urlencoded');
 
     return new Promise(resolve => {
-      this.http.post('http://192.168.6.210:3333/addstartup', creds, {headers: headers}).subscribe(data => {
+      this.http.post('https://sai-vizag.herokuapp.com/addstartup', creds, {headers: headers}).subscribe(data => {
         console.log("from add-startup.ts");
         console.log(data);
         console.log(creds);
